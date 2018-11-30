@@ -1,0 +1,9 @@
+/node_modules
+/vendor
+/.idea
+.env
+/logs
+/storage
+/nginx/sites/*
+!/nginx/sites/default.conf
+!/nginx/sites/demo.conf.example
