@@ -3,13 +3,13 @@
 ### 1. Clone the source code.
 
 ```shell
-git clone https://github.com/linderun/docker-compose.git & cd docker-compose
+git clone https://github.com/linderun/docker-compose.git
 ```
 
 ### 2. Set the basic config
 
 ```shell
-cp .env.example .env
+cd docker-compose & cp .env.example .env
 ```
 
 Edit the `.env` file and set the config for the docker compose after you copy the `.env`.example file.
