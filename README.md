@@ -3,7 +3,7 @@
 ### 1. Clone the source code.
 
 ```shell
-git clone https://github.com/linderun/docker-compose.git
+git clone https://github.com/linderun/docker-compose.git & cd docker-compose
 ```
 
 ### 2. Set the basic config
