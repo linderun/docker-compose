@@ -1,3 +1,8 @@
+## Documentation
+
+- [《CentOS7 安装 Docker CE》](http://www.linderun.com/centos7-docker-ce-2iidu)
+- [《CentOS7 安装 Docker Compose 服务编排工具》](http://www.linderun.com/centos7-docker-compose-icli8)
+
 ## Install
 
 ### 1. Clone the source code.
@@ -9,7 +14,7 @@ git clone https://github.com/linderun/docker-compose.git
 ### 2. Set the basic config
 
 ```shell
-cp .env.example .env
+cd docker-compose && cp .env.example .env
 ```
 
 Edit the `.env` file and set the config for the docker compose after you copy the `.env`.example file.
