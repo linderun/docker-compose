@@ -13,6 +13,8 @@ volumes:
     driver: ${VOLUMES_DRIVER}
   redis:
     driver: ${VOLUMES_DRIVER}
+  elasticsearch:
+    driver: ${VOLUMES_DRIVER}
 
 services:
 
@@ -98,5 +100,30 @@ services:
       ports:
         - "${REDIS_PORT}:6379"
       networks:
+        - backend
+
+### ElasticSearch ########################################
+    elasticsearch:
+      build:
+        context: ./elasticsearch
+        args:
+          - INSTALL_ELASTICSEARCH_ANALYSIS_IK=${INSTALL_ELASTICSEARCH_ANALYSIS_IK}
+      volumes:
+        - ${DATA_PATH_HOST}/elasticsearch:/usr/share/elasticsearch/data
+      environment:
+        - cluster.name=docker-cluster
+        - bootstrap.memory_lock=true
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      ulimits:
+        memlock:
+          soft: -1
+          hard: -1
+      ports:
+        - "${ELASTICSEARCH_HOST_HTTP_PORT}:9200"
+        - "${ELASTICSEARCH_HOST_TRANSPORT_PORT}:9300"
+      depends_on:
+        - php-fpm
+      networks:
+        - frontend
         - backend
 
